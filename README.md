@@ -1,4 +1,19 @@
-pertino-sdk-python
-==================
+Welcome to Pertino Python SDK
 
-Python SDK for the Pertino APIs
+To Build:
+
+ant env
+
+ant init
+
+ant package
+
+To run unit tests:
+
+ant test
+
+To run acceptance test
+
+-Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
+
+ant acceptance
