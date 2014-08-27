@@ -1,7 +1,7 @@
 /bin/rm -f .pipPackageList
 pip3 freeze > .pipPackageList
 
-for P in pytest coverage radon mockito-lwoydziak requests jsonconfigfile
+for P in pytest coverage radon mockito-without-hardcoded-distribute-version requests jsonconfigfile
 do
         /usr/bin/python2 find_package.py --package $P .pipPackageList
         case $? in
