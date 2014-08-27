@@ -2,3 +2,4 @@
 .project
 .pertinoApiAcceptanceConfig
 .python3-sandbox/
+pertinosdk/tests/__pycache__/

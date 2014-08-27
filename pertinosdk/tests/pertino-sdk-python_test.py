@@ -28,21 +28,22 @@ class Contains(Matcher):
     def __repr__(self):
         return "<Contains: '%s'>" % (str(self.sub)) 
 
-def test_CanRetrieveOrganizationListUnfiltered():
+def setupSdk():
     requests = mock()
     pertinoSdk = PertinoSdk('a', 'b', requests)
     response = mock()
     when(requests).get(any(), auth=any()).thenReturn(response)
+    return pertinoSdk, requests, response
+
+def test_CanRetrieveOrganizationListUnfiltered():
+    pertinoSdk, requests, response = setupSdk()
     json = {"orgs": [{"name": "organization", "id": 1234}]}
     when(response).json().thenReturn(json)
     assert pertinoSdk.listOrgs() == json["orgs"]
-    verify(requests).get('http://54.200.33.10:5000/api/v0-alpha/orgs?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=('a', 'b'))
+    verify(requests).get('http://api.labs.pertino.com:5000/api/v0-alpha/orgs?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=('a', 'b'))
 
 def test_CanRetrieveOrganizationListFiltered():
-    requests = mock()
-    pertinoSdk = PertinoSdk('a', 'b', requests)
-    response = mock()
-    when(requests).get(any(), auth=any()).thenReturn(response)
+    pertinoSdk, requests, response = setupSdk()
     json = {"orgs": [{"name": "organization", "id": 1234}]}
     when(response).json().thenReturn(json)
     closure = mock()
@@ -50,34 +51,26 @@ def test_CanRetrieveOrganizationListFiltered():
     verify(closure).function(json["orgs"][0])
     
 def test_CanRetrieveDevicesListUnfiltered():
-    requests = mock()
-    pertinoSdk = PertinoSdk('a', 'b', requests)
-    response = mock()
-    when(requests).get(any(), auth=any()).thenReturn(response)
+    pertinoSdk, requests, response = setupSdk()
     json = {"devices": [{"ipv4Address": "123.456.789.10", "hostName": "host", "id": 1234}]}
     when(response).json().thenReturn(json)
     assert pertinoSdk.listDevicesIn({"id":1}) == json["devices"]
-    verify(requests).get('http://54.200.33.10:5000/api/v0-alpha/orgs/1/devices?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=any())
+    verify(requests).get('http://api.labs.pertino.com:5000/api/v0-alpha/orgs/1/devices?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=any())
 
 def test_CanRetrieveDevicesListFiltered():
-    requests = mock()
-    pertinoSdk = PertinoSdk('a', 'b', requests)
-    response = mock()
-    when(requests).get(any(), auth=any()).thenReturn(response)
+    pertinoSdk, requests, response = setupSdk()
     json = {"devices": [{"ipv4Address": "123.456.789.10", "hostName": "host", "id": 1234}]}
     when(response).json().thenReturn(json)
     closure = mock()
     pertinoSdk.listDevicesIn({"id":1}, closure.function)
     verify(closure).function(json["devices"][0])
-     
+
 def test_CanDeleteMachine():
-    requests = mock()
-    pertinoSdk = PertinoSdk('a', 'b', requests)
-    response = mock()
+    pertinoSdk, requests, response = setupSdk()
     when(requests).delete(any(), auth=any()).thenReturn(response)
     devices = [{"ipv4Address": "123.456.789.10", "hostName": "host", "id": 1234}]
     pertinoSdk.deleteFrom({"id":1}, devices)
-    verify(requests, times=1).delete('http://54.200.33.10:5000/api/v0-alpha/orgs/1/devices/1234?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=any())   
+    verify(requests, times=1).delete('http://api.labs.pertino.com:5000/api/v0-alpha/orgs/1/devices/1234?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=any())   
 
 def test_CanBuildClosureToFilterApiResponses():
     isQueryBuilder = any(QueryBuilder)

@@ -23,7 +23,6 @@ class QueryBuilder(object):
 def where(field):
     return QueryBuilder(field)
 
-# example http://localhost:5000/api/v0-alpha/orgs/8/devices?user_key=993e79924d5b6346fe62a5cf62183bc5
 class PertinoSdk(object):
     '''
     classdocs
@@ -31,8 +30,7 @@ class PertinoSdk(object):
     API_KEY = '993e79924d5b6346fe62a5cf62183bc5'
 
     USER_QUERY='?user_key=' + API_KEY
-    #BASE_URL='http://api.labs.pertino.com:5000'
-    BASE_URL='http://54.200.33.10:5000'
+    BASE_URL='http://api.labs.pertino.com:5000'
     BASE_PATH='/api/v0-alpha'
     ORGS_PATH='/orgs'
     DEVICES_PATH='/devices'
