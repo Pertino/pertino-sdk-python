@@ -18,7 +18,7 @@ if os.path.exists('README.md'):
 
 #scripts = glob.glob("application/*")
 
-setup(name='pertino-sdk-python',
+setup(name='pertinosdk',
       version='0.1',
       maintainer='Pertino Inc.',
       maintainer_email='developer@pertino.com',
@@ -36,7 +36,7 @@ setup(name='pertino-sdk-python',
             'Topic :: Software Development :: Libraries :: Python Modules'
       ],
       packages=[
-                'pertino-sdk-python'
+                'pertinosdk'
                ],
       install_requires=[
                          "jsonconfigfile"

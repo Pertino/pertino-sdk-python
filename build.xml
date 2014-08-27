@@ -1,5 +1,5 @@
 <project name="PertinoSdkPython" default="all">
-	<property name="src.dir" value="pertino-sdk-python"/>
+	<property name="src.dir" value="pertinosdk"/>
 	<property name="test.dir" value="acceptance"/>
 	<property name="envDir" value=".python3-sandbox"/>
 
@@ -178,7 +178,7 @@
 	  	<path id="temp.files">
 	    	<fileset dir=".">
 	    	     <patternset>
-	    	          <include name="pertino-sdk-python/*.pyc"/>
+	    	          <include name="pertinosdk/*.pyc"/>
 	    	     	  <include name="acceptance/*.pyc"/>
 			  		  <include name=".coverage*"/>
 	    	     </patternset>
@@ -205,7 +205,7 @@
 	  		<arg value="${src.dir}/__pycache__/"/>
 	  		<arg value="${test.dir}/__pycache__/"/>
 	  		<arg value="dist" />
-	  		<arg value="pertino-sdk-python.egg-info"/>
+	  		<arg value="pertinosdk.egg-info"/>
 	  		<arg value="scripts"/>
 	  	</exec>
 	</target>
@@ -234,7 +234,7 @@
 			<arg value="pip3"/>
 			<arg value="uninstall"/>
 			<arg value="-y"/>
-			<arg value="pertino-sdk-python"/>
+			<arg value="pertinosdk"/>
 		</exec>
 	</target>
 	<target name="package-deploy" depends="clean,package-remove">
