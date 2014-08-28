@@ -1,15 +1,15 @@
 Welcome to Pertino Python SDK
 =============================
 
-.. topic:: To use:
-.. include::acceptance/test_api.py
+.. topic:: To use
+	include file here
 
-.. topic:: To Build:
+.. topic:: To Build
 	ant env
 	ant init
 	ant package
 
-.. topic:: To run unit tests:
+.. topic:: To run unit tests
 	ant test
 
 .. topic:: To run acceptance test
