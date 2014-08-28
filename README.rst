@@ -5,8 +5,9 @@ To use
 ######
 	include file here
 
-To Build::
+To Build
 ########
+.. code::
 	ant env
 	ant init
 	ant package
