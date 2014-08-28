@@ -7,7 +7,7 @@ To use
 
 To Build
 ########
-.. code-block::
+::
 	ant env
 	ant init
 	ant package
