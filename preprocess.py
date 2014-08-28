@@ -14,10 +14,10 @@ def preprocess(inputfile):
         for _, line in enumerate(open("README.in", 'r'), start=1):
             matches = regex.match(line)
             if matches is None:
-                print(line, file=output)
+                print(line, end="", file=output)
                 continue
             for _, addline in enumerate(inputfile, start=1):
-                print("  "+addline, file=output)
+                print("  "+addline, end="", file=output)
 
 def main(argv=None):
     if argv is None:
