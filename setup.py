@@ -12,9 +12,9 @@ def read(*rnames):
 
 import os.path
 
-if os.path.exists('README.md'):
+if os.path.exists('README.rst'):
     import shutil
-    shutil.copyfile('README.md', 'README.txt')
+    shutil.copyfile('README.rst', 'README.txt')
 
 #scripts = glob.glob("application/*")
 
@@ -41,7 +41,8 @@ setup(name='pertinosdk',
       install_requires=[
                          "jsonconfigfile"
                         ],
-      keywords = ['pertino', 'sdk', 'api']
+      keywords = ['pertino', 'sdk', 'api'],
+      license='MIT'
 #       scripts=scripts
       )
 

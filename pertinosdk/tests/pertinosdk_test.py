@@ -43,7 +43,7 @@ def test_CanRetrieveOrganizationListUnfiltered():
     verify(requests).get('http://api.labs.pertino.com:5000/api/v0-alpha/orgs?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=('a', 'b'))
 
 def test_CanRetrieveOrganizationListFiltered():
-    pertinoSdk, requests, response = setupSdk()
+    pertinoSdk, _, response = setupSdk()
     json = {"orgs": [{"name": "organization", "id": 1234}]}
     when(response).json().thenReturn(json)
     closure = mock()
@@ -58,7 +58,7 @@ def test_CanRetrieveDevicesListUnfiltered():
     verify(requests).get('http://api.labs.pertino.com:5000/api/v0-alpha/orgs/1/devices?user_key=993e79924d5b6346fe62a5cf62183bc5', auth=any())
 
 def test_CanRetrieveDevicesListFiltered():
-    pertinoSdk, requests, response = setupSdk()
+    pertinoSdk, _, response = setupSdk()
     json = {"devices": [{"ipv4Address": "123.456.789.10", "hostName": "host", "id": 1234}]}
     when(response).json().thenReturn(json)
     closure = mock()
