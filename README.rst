@@ -3,7 +3,7 @@ Welcome to Pertino Python SDK
 
 Example usage
 ######
-.. code-block::
+.. code-block:: python
 
   '''
   Created on Jul 26, 2014
