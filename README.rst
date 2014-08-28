@@ -18,4 +18,4 @@ Welcome to Pertino Python SDK
 
 	ant acceptance
 	
-.. include:: <acceptance/test_api.py>
+.. literalinclude:: <acceptance/test_api.py>
