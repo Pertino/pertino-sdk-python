@@ -17,3 +17,5 @@ Welcome to Pertino Python SDK
 	Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
 
 	ant acceptance
+	
+.. include:: <acceptance/test_api.py>
