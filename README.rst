@@ -3,25 +3,26 @@ Welcome to Pertino Python SDK
 
 To use
 ######
-	include file here
+  include file here
 
 To Build
 ########
-.. code::
-	ant env
-	ant init
-	ant package
+.. code-block::
+
+  ant env
+  ant init
+  ant package
 
 To run unit tests
 #################
-	ant test
+  ant test
 
 To run acceptance test
 ######################
 
-	Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
+  Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
 
-	ant acceptance
+  ant acceptance
 	
 	
 testing reST blocks
