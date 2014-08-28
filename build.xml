@@ -251,5 +251,11 @@
             <arg value="upload"/>
             <arg value="-r pypi"/>
         </exec>
-</target>
+	</target>
+	<target name="readme">
+		<exec executable="python2" failonerror="true">
+			<arg value="preprocess.py" />
+	        <arg value="acceptance/test_api.py"/>
+		</exec>
+	</target>
 </project>
