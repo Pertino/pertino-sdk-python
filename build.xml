@@ -238,18 +238,18 @@
 		</exec>
 	</target>
 	<target name="package-deploy" depends="clean,package-remove">
-        <exec executable="./in_virtual_env">
+        <exec executable="./in_virtual_env" failonerror="true">
             <arg value="python3"/>
             <arg value="setup.py"/>
             <arg value="register"/>
-            <arg value="-r pypi"/>
+            <arg value="-r pypitest"/>
         </exec>
-        <exec executable="./in_virtual_env">
+        <exec executable="./in_virtual_env" failonerror="true">
             <arg value="python3"/>
             <arg value="setup.py"/>
             <arg value="sdist"/>
             <arg value="upload"/>
-            <arg value="-r pypi"/>
+            <arg value="-r pypitest"/>
         </exec>
 	</target>
 	<target name="readme">

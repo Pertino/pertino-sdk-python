@@ -1,9 +1,14 @@
-Welcome to Pertino Python SDK
-=============================
+pertinosdk
+==========
 
-Example usage
-######
+Welcome to Pertino Python SDK
+
+
+Example Usage
+-------------
+
 .. code-block:: python
+
 
   '''
   Created on Jul 26, 2014
@@ -32,23 +37,26 @@ Example usage
       assert not pertinoSdk.listDevicesIn(organizations[0], where("hostName").contains("auto"))
       
 To Build
-########
-.. code-block::
+--------
+
+.. code-block:: python
 
   ant env
   ant init
   ant package
 
 To run unit tests
-#################
-.. code-block::
+--------------------------
+
+.. code-block:: python
 
   ant test
 
-To run acceptance test
-######################
+To run acceptance tests
+--------------------------------
 
-  Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
-.. code-block::
+Create a file with your Pertino credentials (see acceptance/conftest.py for format/name)
+
+.. code-block:: python
 
   ant acceptance
