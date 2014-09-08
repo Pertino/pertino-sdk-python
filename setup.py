@@ -15,11 +15,11 @@ with codecs.open('README.rst', encoding='utf-8') as f:
 #scripts = glob.glob("application/*")
 
 setup(name='pertinosdk',
-      version='0.1.0',
+      version='0.1.1',
       maintainer='Pertino Inc.',
       maintainer_email='developer@pertino.com',
       url = 'https://github.com/Pertino/pertino-sdk-python',
-      download_url = 'https://github.com/Pertino/pertino-sdk-python/tarball/0.1',
+      download_url = 'https://github.com/Pertino/pertino-sdk-python/tarball/0.1.1',
       platforms = ["any"],
       description = 'Python package for communicating with Pertino.',
       long_description = long_description,
@@ -35,7 +35,7 @@ setup(name='pertinosdk',
                 'pertinosdk'
                ],
       install_requires=[
-                         "requests"
+                         "requests==2.2.1"
                         ],
       keywords = ['pertino', 'sdk', 'api'],
       license='LICENSE.txt'
